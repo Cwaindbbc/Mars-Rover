@@ -5,9 +5,16 @@
     <title>Mars Rover</title>
     <link rel="stylesheet" href="style.css">
     <script src="App.js"></script>
+    <script src="style.css"></script>
+
   </head>
   <body>
-      <P> Welcome to the Express App - Mars Rover </P>
+      <P class= "title"> Welcome to the Express App - Mars Rover </P>
+      <p>Date/Time:<span id="date"></span></p>
+      <script>
+        var date = new Date();
+        document.getElementById("date").innerHTML = date.toLocaleString();
+      </script>
       <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Curiosity_at_Work_on_Mars_%28Artist%27s_Concept%29.jpg/1200px-Curiosity_at_Work_on_Mars_%28Artist%27s_Concept%29.jpg" alt="Mars Rover" width="500" height="600"> 
   </body>
 </html>
