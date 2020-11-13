@@ -4,51 +4,14 @@
     <meta charset="utf-8">
     <title>Mars Rover</title>
     <link rel="stylesheet" href="style.css">
-    <script src="App.js"></script>
+    <script async defer src="index.js"></script>
 
   </head>
   <body>
       <P class= "title"> Welcome to the Express App - Mars Rover </P>
       <p>Earth Date & Time:<span id="date"></span><span>,<span id= "timeOffset"></span><p>
-      <p id= "KennedySpaceCentreTimeParagraph">This is the Kennedy Space Centre Earth time: <span id= "KennedySpaceCentreTime"></span></p>
-      <script>
-        var date = new Date();
-        document.getElementById("date").innerHTML = date.toLocaleString();
+      <p id= "kscTime">This is the Kennedy Space Centre Earth time: </p>
 
-        function kennedySpaceCentreTime() {
-          var date = new Date();
-           var kennedySpaceCentreTimeParagraph = document.getElementById("KennedySpaceCentreTimeParagraph"); 
-            var kennedySpaceCentreTime =date.toLocaleTimeString('en-US',{timeZone:"America/New_York"});
-           var insertingTheKennedyTime = document.createTextNode(kennedySpaceCentreTime);
-           kennedySpaceCentreTimeParagraph.appendChild(insertingTheKennedyTime);
-        }; 
-       kennedySpaceCentreTime();
-
-       function kennedyCentreOffsetTime(){
-        var date = new Date();
-         var timeOffset = date.getTimezoneOffset()/60;
-         //got the diff in hours between us and UTC. 
-         var timeDiff = timeOffset + 5; 
-         var timeOffsetSpan=document.getElementById("timeOffset");
-         var insertingTheOffsetTime = document.createTextNode(timeDiff);
-         timeOffsetSpan.appendChild(insertingTheOffsetTime);
-
-       }
-       kennedyCentreOffsetTime(); 
-
-        //  var offsetSection = document.getElementById("timeoffset");
-        //  var addingInOffset = document.createTextNode(timeOffset);
-
-        //  offsetSection.appendChild(addingInOffset); 
-
-        //  if( timeOffset > 0){
-        //   const ahead = document.createTextNode(" This many hours ahead of the Kennedy Space Centre");
-
-
-        
-
-
-      </script>
       <img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Curiosity_at_Work_on_Mars_%28Artist%27s_Concept%29.jpg/1200px-Curiosity_at_Work_on_Mars_%28Artist%27s_Concept%29.jpg" alt="Mars Rover" width="500" height="600"> 
   </body>
 </html>
