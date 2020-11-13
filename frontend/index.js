@@ -1,26 +1,24 @@
-var date = new Date();
-document.getElementById("date").innerHTML = date.toLocaleString();
+function currentBrowserTime() {
+  document.getElementById("date").innerHTML = new Date().toLocaleString();
+}
+currentBrowserTime();
 
 function kennedySpaceCentreTime() {
-  var date = new Date();
-   var kennedySpaceCentreTimeParagraph = document.getElementById("KennedySpaceCentreTimeParagraph"); 
-    var kennedySpaceCentreTime =date.toLocaleTimeString('en-US',{timeZone:"America/New_York"});
-   var insertingTheKennedyTime = document.createTextNode(kennedySpaceCentreTime);
-   kennedySpaceCentreTimeParagraph.appendChild(insertingTheKennedyTime);
-}; 
+  const kennedySpaceCentreTime = new Date().toLocaleTimeString("en-US", {
+    timeZone: "America/New_York",
+  });
+  const insertingTheKennedyTime = document.createTextNode(
+    kennedySpaceCentreTime
+  );
+
+  document.getElementById("kscTime").appendChild(insertingTheKennedyTime);
+}
 
 kennedySpaceCentreTime();
 
-function kennedyCentreOffsetTime(){
-var date = new Date();
- var timeOffset = date.getTimezoneOffset()/60;
- //got the diff in hours between us and UTC. 
- var timeDiff = timeOffset + 5; 
- var timeOffsetSpan=document.getElementById("timeOffset");
- var insertingTheOffsetTime = document.createTextNode(timeDiff);
- timeOffsetSpan.appendChild(insertingTheOffsetTime);
-
+function kennedyCentreOffsetTime() {
+  const timeOffset = new Date().getTimezoneOffset() / 60 + 5;
+  const insertingTheOffsetTime = document.createTextNode(timeOffset);
+  document.getElementById("timeOffset").appendChild(insertingTheOffsetTime);
 }
 kennedyCentreOffsetTime();
-
-
