@@ -1,6 +1,18 @@
 .title{
-    font-size: large;
-   
+    font-size:80px;
+    color:grey;
     left: 200px;
     top: 150px;
+    text-align:center;
+}
+
+p{
+    font-size: 50px; 
+    color:grey;
+    text-align:center; 
+    border: grey; 
+}
+
+body{
+    background-color:lemonchiffon;
 }
