@@ -22,3 +22,24 @@ function kennedyCentreOffsetTime() {
   document.getElementById("timeOffset").appendChild(insertingTheOffsetTime);
 }
 kennedyCentreOffsetTime();
+
+function photoOfTheDay() {
+  var NasaPhotoRef = "https://www.nasa.gov/";
+  const photoTag = document.getElementById("photoOfTheDay");
+  var photoOfTheDay = NasaPhotoRef;
+  photoTag.appendChild(photoOfTheDay);
+}
+
+function displayTheCuriositySol() {
+  const landedDate = new Date(2012, 07, 06, 05, 17);
+
+  const todaysDate = new Date();
+
+  const differenceMs = todaysDate - landedDate;
+  const dateDifference = differenceMs / (1000 * 60 * 60 * 24);
+  const sols = dateDifference / 1.0274912517;
+
+  const curiositySol = document.getElementById("currentSol");
+  curiositySol.innerHTML = sols;
+}
+displayTheCuriositySol();
