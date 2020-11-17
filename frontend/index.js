@@ -31,7 +31,7 @@ function photoOfTheDay() {
 }
 
 function displayTheCuriositySol() {
-  const landedDate = new Date(2011, 10, 16, 15, 02);
+  const landedDate = new Date(2012, 07, 06, 05, 17);
 
   const todaysDate = new Date();
 
