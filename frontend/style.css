@@ -28,6 +28,7 @@ body{
 
     .sprite {
         position:absolute; 
+        cursor:move;
         width:3%;
         height: 3%; 
         top: 26%;
