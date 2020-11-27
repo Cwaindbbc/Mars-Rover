@@ -5,14 +5,21 @@
     <title>Mars Rover</title>
     <link rel="stylesheet" href="style.css">
     <script async defer src="index.js"></script>
+    <script async defer src= "photoOfTheDay.js"></script> 
+    
 
   </head>
-  <body>
+  <body onload="displayPhoto()">
       <h1 class="title"> Mars Rover- its out of this world! <h1>
       <p>Earth Date & Time:<span id="date"></span> and the space centre is <span id="timeOffset"></span> hours different.<p>
       <p id="kscTime">This is the Kennedy Space Centre Earth time: </p>
       <p> Curiosity Rover has been there for <span id="currentSol"></span>sol</p>
-      
-      </figure>
+
+      <div>
+        <h1>Nasa Photo of the day</h1>
+        <img id="potd"/>
+        <p id="exp"></p>
+  
+      </div>
   </body>
 </html>
