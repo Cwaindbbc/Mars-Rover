@@ -8,4 +8,5 @@ function displayPhoto() {
 
       document.getElementById("exp").textContent = data.explanation;
     });
-}
+  }
+  displayPhoto(); 

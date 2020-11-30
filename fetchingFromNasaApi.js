@@ -1,4 +1,3 @@
-const { response } = require("express");
 const fetch = require("node-fetch");
 const configParams = require("./config.js");
 
@@ -9,12 +8,7 @@ function fetchNasa() {
 
   return fetch(fullURL)
     .then((nasaRes) => nasaRes.json())
-    .then((data) => data);
-}
-fetchNasa();
-
-function accessResponse(req, res) {
-  fetchNasa().then((data) => res.json(data));
+    .then((data) => res.json(data));
 }
 
-module.exports = accessResponse;
+module.exports = fetchNasa;
