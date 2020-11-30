@@ -1,5 +1,12 @@
+function displayPhoto() {
+  fetch("/image")
+    .then((response) => response.json())
+    .then((data) => {
+      const photoOfTheDay = document.getElementById("potd");
+      photoOfTheDay.setAttribute("src", `${data.url}`);
+      photoOfTheDay.setAttribute("alt", `${data.title}`);
 
-fetch("https://apod.nasa.gov/apod?concept_tags")
-.then(response => response.json())
-.then (data=>console.log(data)); 
-
+      document.getElementById("exp").textContent = data.explanation;
+    });
+  }
+  displayPhoto(); 
