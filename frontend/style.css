@@ -28,18 +28,8 @@ body {
 
 .sprite {
   position: absolute;
-  width: 3%;
-  height: 3%;
+  cursor: move;
+  width: 100px;
   top: 26%;
   left: 58%;
-}
-
-@media screen and (max-width: 503px) {
-  .sprite {
-    position: absolute;
-    width: 3%;
-    height: 3%;
-    top: 33%;
-    left: 58%;
-  }
 }

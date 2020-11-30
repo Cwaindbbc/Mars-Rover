@@ -1,33 +1,27 @@
-const sprite=(document.getElementById("sprite")); 
+let isDragging = false;
+const dragSprite = document.getElementById("sprite");
 
-sprite.onmousedown = function(event) {
-  
-  sprite.style.position = 'absolute';
-  sprite.style.zIndex = 1000;
-  document.body.append(sprite);
+dragSprite.addEventListener("mousemove", draggingSprite);
+dragSprite.addEventListener("mouseup", dropSprite);
+dragSprite.addEventListener("mousedown", startDrag);
 
+function startDrag(event) {
+  event.preventDefault();
+  isDragging = true;
+}
 
-  function moveAt(pageX, pageY) {
-    sprite.style.left = pageX - sprite.offsetWidth / 2 + 'px';
-    sprite.style.top = pageY - sprite.offsetHeight / 2 + 'px';
+function position(pageX, pageY) {
+  dragSprite.style.left = pageX - dragSprite.offsetWidth / 2 + "px";
+  dragSprite.style.top = pageY - dragSprite.offsetHeight / 2 + "px";
+}
+
+function draggingSprite(event) {
+  if (isDragging === true) {
+    event.preventDefault();
+    position(event.pageX, event.pageY);
   }
+}
 
-  moveAt(event.pageX, event.pageY);
-
-
-  function onMouseMove(event) {
-    moveAt(event.pageX, event.pageY);
-  }
-
-  document.addEventListener('mousemove', onMouseMove);
-
-  sprite.onmouseup = function() {
-    document.removeEventListener('mousemove', onMouseMove);
-    sprite.onmouseup = null;
-  };
-
-  sprite.ondragstart = function(){
-        return false
-
-  }
-};
+function dropSprite(event) {
+  isDragging = false;
+}
