@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login page for Mars Rover</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -19,7 +20,7 @@
 
         <label for="psw"><b>Password</b></label>
         <input
-          id="password"
+          id="psw"
           type="password"
           placeholder="Enter Password"
           name="psw"
@@ -40,59 +41,35 @@
     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
   </div>
   <script>
-          var myInput = document.getElementById("psw");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
+    var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
 
-        myInput.onfocus = function () {
-          document.getElementById("message").style.display = "block";
-        };
+    myInput.onfocus = function () {
+      document.getElementById("message").style.display = "block";
+    };
 
+    function validateCharacters(element, isValid) {
+      if (isValid) {
+        element.classList.remove("invalid");
+        element.classList.add("valid");
+      } else {
+        element.classList.remove("valid");
+        element.classList.add("invalid");
+      }
+    }
 
-        myInput.onblur = function () {
-          document.getElementById("message").style.display = "none";
-        };
+    myInput.onkeyup = function () {
+      var upperCaseLetters = /[A-Z]/g;
+      var numbers = /[0-9]/g;
+      var lowerCaseLetters = /[a-z]/g;
 
-        myInput.onkeyup = function () {
-
-          var lowerCaseLetters = /[a-z]/g;
-          if (myInput.value.match(lowerCaseLetters)) {
-            letter.classList.remove("invalid");
-            letter.classList.add("valid");
-          } else {
-            letter.classList.remove("valid");
-            letter.classList.add("invalid");
-          }
-
-
-          var upperCaseLetters = /[A-Z]/g;
-          if (myInput.value.match(upperCaseLetters)) {
-            capital.classList.remove("invalid");
-            capital.classList.add("valid");
-          } else {
-            capital.classList.remove("valid");
-            capital.classList.add("invalid");
-          }
-
-          var numbers = /[0-9]/g;
-          if (myInput.value.match(numbers)) {
-            number.classList.remove("invalid");
-            number.classList.add("valid");
-          } else {
-            number.classList.remove("valid");
-            number.classList.add("invalid");
-          }
-
-
-          if (myInput.value.length >= 8) {
-            length.classList.remove("invalid");
-            length.classList.add("valid");
-          } else {
-            length.classList.remove("valid");
-            length.classList.add("invalid");
-          }
-        };
+      validateCharacters(letter, myInput.value.match(lowerCaseLetters));
+      validateCharacters(capital, myInput.value.match(upperCaseLetters));
+      validateCharacters(number, myInput.value.match(numbers));
+      validateCharacters(length, myInput.value.length >= 8);
+    };
   </script>
 </html>
