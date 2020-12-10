@@ -26,7 +26,7 @@ app.post("/login", (req, res) => {
     enteredUsername === hardCodedUser &&
     enteredPassword === hardCodedPassword
   ) {
-    res.send("OK");
+    res.redirect('/'); 
   } else {
     res.send("Not a match :-(. Please try again");
   }
