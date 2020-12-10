@@ -15,7 +15,7 @@ app.use("/rover", express.static("frontend/rover.html"));
 
 app.post("/login", (req, res) => {
   const hardCodedUser = "user";
-  const hardCodedPassword = "me";
+  const hardCodedPassword = "Me202020";
 
   const enteredUsername = req.body.uname;
   const enteredPassword = req.body.psw;
