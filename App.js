@@ -11,7 +11,9 @@ const fetchingFromNasa = require("./fetchingFromNasaApi.js");
 
 app.use(express.static("frontend"));
 app.use("/login", express.static("frontend/login.html"));
-app.use("/rover", express.static("frontend/rover.html"));
+app.use("/register", express.static("frontend/register.html"));
+
+
 
 app.post("/login", (req, res) => {
   const hardCodedUser = "user";
