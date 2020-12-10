@@ -33,3 +33,18 @@ body {
   top: 26%;
   left: 58%;
 }
+
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+.invalid {
+  color: red;
+}
+.valid {
+  visibility: hidden;
+}
