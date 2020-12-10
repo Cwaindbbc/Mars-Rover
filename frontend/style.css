@@ -1,46 +1,35 @@
-.title{
-    font-size:80px;
-    color:grey;
-    left: 200px;
-    top: 150px;
-    text-align:center;
+.title {
+  font-size: 80px;
+  color: grey;
+  left: 200px;
+  top: 150px;
+  text-align: center;
 }
 
-p{
-    font-size: 50px; 
-    color:grey;
-    text-align:center; 
-    border: grey; 
+p,
+h1 {
+  font-size: 50px;
+  color: grey;
+  text-align: center;
+  border: grey;
 }
 
-body{
-    background-color:lemonchiffon;
+body {
+  background-color: lemonchiffon;
 }
 
-    .map {
-        position:relative;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    
-       }
-
-    .sprite {
-        position:absolute; 
-        width:3%;
-        height: 3%; 
-        top: 26%;
-        left: 58%;
-       
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
-@media screen and (max-width:503px) {
 .sprite {
-    position:absolute; 
-    width:3%;
-    height: 3%; 
-    top: 33%;
-    left: 58%;
-    }
+  position: absolute;
+  cursor: move;
+  width: 100px;
+  top: 26%;
+  left: 58%;
 }

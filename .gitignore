@@ -125,10 +125,12 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
 
+
 # Created by https://www.toptal.com/developers/gitignore/api/osx
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx
 
 ### OSX ###
+
 # General
 .DS_Store
 .AppleDouble
@@ -159,4 +161,3 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/osx
 config.js
-
