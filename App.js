@@ -13,25 +13,25 @@ app.use(express.static("frontend"));
 app.use("/login", express.static("frontend/login.html"));
 app.use("/register", express.static("frontend/register.html"));
 
-
-
 app.post("/login", (req, res) => {
   const hardCodedUser = "user";
   const hardCodedPassword = "Me202020";
 
   const enteredUsername = req.body.uname;
   const enteredPassword = req.body.psw;
-  
-  console.log(req.body.uname);
 
   if (
     enteredUsername === hardCodedUser &&
     enteredPassword === hardCodedPassword
   ) {
-    res.redirect('/'); 
+    res.redirect("/");
   } else {
     res.send("Not a match :-(. Please try again");
   }
+});
+
+app.post("/register", function (req, res) {
+  res.status(201).send("Your details have been added to the database");
 });
 
 app.get("/image", fetchingFromNasa);
