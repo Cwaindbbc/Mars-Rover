@@ -35,43 +35,4 @@
       <p>Do you need to register? Register <a href="/register"> here</a></p>
     </div>
   </body>
-  <div id="message">
-    <h3>Password must contain the following:</h3>
-    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-    <p id="number" class="invalid">A <b>number</b></p>
-    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-  </div>
-  <script>
-    var myInput = document.getElementById("psw");
-    var letter = document.getElementById("letter");
-    var capital = document.getElementById("capital");
-    var number = document.getElementById("number");
-    var length = document.getElementById("length");
-
-    myInput.onfocus = function () {
-      document.getElementById("message").style.display = "block";
-    };
-
-    function validateCharacters(element, isValid) {
-      if (isValid) {
-        element.classList.remove("invalid");
-        element.classList.add("valid");
-      } else {
-        element.classList.remove("valid");
-        element.classList.add("invalid");
-      }
-    }
-
-    myInput.onkeyup = function () {
-      var upperCaseLetters = /[A-Z]/g;
-      var numbers = /[0-9]/g;
-      var lowerCaseLetters = /[a-z]/g;
-
-      validateCharacters(letter, myInput.value.match(lowerCaseLetters));
-      validateCharacters(capital, myInput.value.match(upperCaseLetters));
-      validateCharacters(number, myInput.value.match(numbers));
-      validateCharacters(length, myInput.value.length >= 8);
-    };
-  </script>
 </html>
