@@ -48,3 +48,11 @@ body {
 .valid {
   visibility: hidden;
 }
+#jsBanner {
+  background-color: rgb(255, 81, 0);
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+  font: bold;
+  font-size: 20px;
+}
