@@ -1,0 +1,7 @@
+CREATE TABLE userstable
+(userId SERIAL PRIMARY KEY,
+userName VARCHAR (50) NOT NULL,
+ email VARCHAR (50) NOT NULL,
+ password VARCHAR(100) NOT NULL
+);
+ 
