@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 const fetchingFromNasa = require("./fetchingFromNasaApi.js");
+const db = require("./repository.js");
 
 app.use(express.static("frontend"));
 app.use("/login", express.static("frontend/login.html"));
@@ -31,7 +32,25 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", function (req, res) {
-  res.status(201).send("Your details have been added to the database");
+  const enteredUsername = req.body.uname;
+  const enteredPassword = req.body.psw;
+  const enteredEmail = req.body.emailAddress;
+
+  db.any(
+    `INSERT INTO userstable(
+    username,
+    email,
+    password)
+    VALUES 
+    ('${enteredUsername}','${enteredEmail}','${enteredPassword}')`
+  )
+
+    .then(function () {
+      res.status(201).send("Your details have been added to the database");
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 });
 
 app.get("/image", fetchingFromNasa);
