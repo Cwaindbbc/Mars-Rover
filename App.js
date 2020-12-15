@@ -13,6 +13,7 @@ const db = require("./repository.js");
 app.use(express.static("frontend"));
 app.use("/login", express.static("frontend/login.html"));
 app.use("/register", express.static("frontend/register.html"));
+app.use("/rover", express.static ("frontend/rover.html")); 
 
 app.post("/login", (req, res) => {
   const hardCodedUser = "user";
